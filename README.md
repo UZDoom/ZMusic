@@ -6,7 +6,7 @@ Welcome! This repository is a library for use with the projects [GZDoom](https:/
 Compile instructions are pretty simple for most systems.
 
 ```
-git clone https://github.com/coelckers/ZMusic.git
+git clone https://github.com/UZDoom/ZMusic.git
 mkdir ZMusic/build
 cd ZMusic/build
 cmake -DCMAKE_BUILD_TYPE=Release ..
