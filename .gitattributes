@@ -26,3 +26,5 @@ language.*	text
 *.flac		binary
 *.dat		binary
 *.ico		binary
+
+/thirdparty/*/** -text
