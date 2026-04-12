@@ -1001,7 +1001,7 @@ struct _sample * Instruments::load_gus_pat(const char *filename)
 		 NOTE: This sets samples for full range decay
 		 */
 		if (gus_sample->modes & SAMPLE_ENVELOPE) {
-			double samples_f = 0.0;
+			[[maybe_unused]]double samples_f = 0.0;
 
 			if (gus_sample->modes & SAMPLE_CLAMPED) {
 				samples_f = (4194301.0 - (float)gus_sample->env_target[5]) / gus_sample->env_rate[5];
