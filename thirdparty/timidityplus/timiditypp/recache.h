@@ -82,7 +82,8 @@ public:
 
 	Recache(Player *p)
 	{
-        memset(this, 0, sizeof(*this));
+		static_assert(std::is_trivially_copy_assignable<Recache>::value);
+		memset((void*)this, 0, sizeof(*this));
 		player = p;
 		resamp_cache_reset();
 	}

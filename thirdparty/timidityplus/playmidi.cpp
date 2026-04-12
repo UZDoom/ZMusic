@@ -104,7 +104,7 @@ void set_playback_rate(int freq)
 Player::Player(Instruments *instr)
 {
 	static_assert(std::is_trivially_copy_assignable<Player>::value); // make sure we don't do anything that makes memsetting dangerous.
-	memset(this, 0, sizeof(*this));
+	memset((void*)this, 0, sizeof(*this));
 	memset(drum_setup_xg, 9, sizeof(drum_setup_xg));
 
 	xg_reverb_type_msb = 0x01;
