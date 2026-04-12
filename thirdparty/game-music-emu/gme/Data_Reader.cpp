@@ -306,8 +306,7 @@ blargg_err_t Callback_Reader::read( void* out, long count )
 // Std_File_Reader
 
 #ifdef HAVE_ZLIB_H
-
-static const char* get_gzip_eof( const char* path, long* eof )
+[[maybe_unused]] static const char* get_gzip_eof( const char* path, long* eof )
 {
 	FILE* file = fopen( path, "rb" );
 	if ( !file )
