@@ -1507,9 +1507,13 @@ static int update_pattern_variables(DUMB_IT_SIGRENDERER *sigrenderer, IT_ENTRY *
 										channel->played_patjump = bit_array_create(256);
 									else {
 										if ( channel->played_patjump_order != 0xFFFE && channel->played_patjump_order != sigrenderer->order )
+										{
 											bit_array_merge(sigrenderer->played, channel->played_patjump, channel->played_patjump_order * 256);
+										}
 										//if (channel->played_patjump_order != sigrenderer->order)
+										{
 											bit_array_reset(channel->played_patjump);
+										}
 									}
 									channel->played_patjump_order = sigrenderer->order;
 #endif
