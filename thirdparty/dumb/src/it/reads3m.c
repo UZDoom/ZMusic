@@ -436,7 +436,7 @@ static DUMB_IT_SIGDATA *it_s3m_load_sigdata(DUMBFILE *f, int * cwtv)
 {
 	DUMB_IT_SIGDATA *sigdata;
 
-	int flags, ffi;
+	int flags, ffi; (void) flags;
 	int default_pan_present;
 
 	int master_volume;

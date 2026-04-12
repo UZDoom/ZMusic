@@ -768,7 +768,7 @@ static int it_xm_read_sample_data(IT_SAMPLE *sample, unsigned char roguebytes, D
 	int old;
 	int32 i;
 //	long truncated_size;
-	int n_channels;
+	int n_channels; (void) n_channels;
 	int32 datasizebytes;
 
 	if (!(sample->flags & IT_SAMPLE_EXISTS))

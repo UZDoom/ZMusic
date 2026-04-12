@@ -62,7 +62,7 @@ static int it_psm_process_sample(IT_SAMPLE * sample, const unsigned char * data,
 	int length = 0;
 	int loopstart = 0;
 	int loopend = 0;
-	int panpos;
+	int panpos; (void) panpos;
 	int defvol = 0;
 	int samplerate = 0;
 
@@ -476,7 +476,7 @@ static DUMB_IT_SIGDATA *it_psm_load_sigdata(DUMBFILE *f, int * ver, int subsong)
 	int n_patterns = 0;
 
 	int first_pattern_line = -1;
-	int first_pattern;
+	int first_pattern; (void) first_pattern;
 
 	int speed, bpm;
 	unsigned char pan[64];

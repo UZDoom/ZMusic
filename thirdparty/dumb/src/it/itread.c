@@ -936,7 +936,7 @@ static sigdata_t *it_load_sigdata(DUMBFILE *f)
 {
 	DUMB_IT_SIGDATA *sigdata;
 
-	int cwt, cmwt;
+	int cwt, cmwt; (void) cwt;
 	int special;
 	int message_length, message_offset;
 
