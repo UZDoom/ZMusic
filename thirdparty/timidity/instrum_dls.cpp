@@ -43,10 +43,8 @@ namespace Timidity
 /*-------------------------------------------------------------------------*/
 struct RIFF_Chunk
 {
-	RIFF_Chunk()
-	{
-		memset(this, 0, sizeof(*this));
-	}
+	RIFF_Chunk() = default;
+
 	~RIFF_Chunk()
 	{
 		// data is not freed here because it may be owned by a parent chunk
