@@ -702,7 +702,8 @@ public:
 	Reverb()
 	{
 		// Make sure that this starts out with all zeros.
-		memset(this, 0, sizeof(*this));
+		static_assert(std::is_trivially_copy_assignable<Reverb>::value);
+		memset((void*)this, 0, sizeof(*this));
 		REV_INP_LEV = 1.0;
 		direct_bufsize = sizeof(direct_buffer);
 		reverb_effect_bufsize = sizeof(reverb_effect_buffer);

@@ -104,7 +104,7 @@ void set_playback_rate(int freq)
 Player::Player(Instruments *instr)
 {
 	static_assert(std::is_trivially_copy_assignable<Player>::value); // make sure we don't do anything that makes memsetting dangerous.
-	memset(this, 0, sizeof(*this));
+	memset((void*)this, 0, sizeof(*this));
 	memset(drum_setup_xg, 9, sizeof(drum_setup_xg));
 
 	xg_reverb_type_msb = 0x01;
@@ -4480,7 +4480,7 @@ void Player::update_rpn_map(int ch, int addr, int update_now)
 		} else
 			channel[ch].drums[note]->pan_random = 0;
 		channel[ch].drums[note]->drum_panning = val;
-		if (update_now && adjust_panning_immediately && ! channel[ch].pan_random)
+		if (update_now && (bool)adjust_panning_immediately && ! channel[ch].pan_random)
 			adjust_drum_panning(ch, note);
 		break;
 	case NRPN_ADDR_1D00:	/* Reverb Send Level of Drum */

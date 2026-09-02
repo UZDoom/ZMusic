@@ -27,11 +27,13 @@
 
 #include <stdlib.h>
 #include <string.h>
+#include <type_traits>
 #include "musicblock.h"
 
 musicBlock::musicBlock ()
 {
-	memset (this, 0, sizeof(*this));
+	static_assert(std::is_trivially_copy_assignable<musicBlock>::value, "");
+	memset ((void*)this, 0, sizeof(*this));
 	for(auto &oplchannel : oplchannels) oplchannel.Panning = 64;	// default to center panning.
 	for(auto &voice : voices) voice.index = ~0u;	// mark all free.
 }

@@ -46,7 +46,7 @@
 
 int32 dumb_resample(DUMB_RESAMPLER *resampler, sample_t *dst, int32 dst_size, VOLUME_PARAMETERS, double delta)
 {
-	int dt, inv_dt;
+	int dt, inv_dt; (void) inv_dt;
 	int VOLUME_VARIABLES;
 	long done;
 	long todo;
